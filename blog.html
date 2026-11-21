@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="builder" content="Stronglify">
+<link rel="icon" type="image/x-icon" href="https://media.stronglify.com/385/favicon-estandar-nero-1795205147.svg">
+<title>Blog · Pensativo</title>
+<meta name="description" content="Textos cortos sobre qué es pensar, acompañados de primates pensativos.">
+<meta name="robots" content="index">
+<link rel="canonical" href="https://stronglifythemes.github.io/blog"><style>
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}img{max-width:100%;height:auto}
+</style><style>
+:root {
+  color-scheme: light;
+  --stone:#e4e0db;
+  --ink:#201e1a;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --gutter:clamp(1.1rem,5vw,7rem);
+}
+*,*::before,*::after { box-sizing:border-box; }
+body.pensativo { margin:0; background:var(--stone); color:var(--ink); }
+.ponder-frame {
+  position:relative;
+  display:grid;
+  align-items:center;
+  isolation:isolate;
+  overflow:hidden;
+  width:100%;
+  aspect-ratio:16/9;
+  padding:var(--gutter);
+  background:var(--stone);
+}
+.ponder-frame img {
+  position:absolute;
+  z-index:-2;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.ponder-frame h1,.ponder-frame h2 {
+  margin:0;
+  max-width:min(12ch,47%);
+  font:600 clamp(2.9rem,7.5vw,9.2rem)/.95 var(--display);
+  letter-spacing:-.07em;
+  text-wrap:balance;
+}
+.ponder-frame[data-sujeto="izquierda"] h2 {
+  justify-self:end;
+  text-align:right;
+}
+.ponder-frame[data-sujeto="derecha"]::before,
+.ponder-frame[data-sujeto="izquierda"]::before,
+.ponder-frame[data-sujeto="centro"]::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+}
+.ponder-frame[data-sujeto="derecha"]::before {
+  background:linear-gradient(90deg,#e4e0db8c,transparent 57%);
+}
+.ponder-frame[data-sujeto="izquierda"]::before {
+  background:linear-gradient(270deg,#e4e0db8c,transparent 57%);
+}
+.ponder-frame[data-sujeto="centro"] {
+  align-items:start;
+  justify-items:center;
+  padding-top:clamp(1.4rem,4vw,4.8rem);
+}
+.ponder-frame[data-sujeto="centro"] h2 {
+  max-width:21ch;
+  font:400 italic clamp(3.2rem,7vw,8.2rem)/.87 var(--serif);
+  letter-spacing:-.035em;
+  text-align:center;
+}
+.ponder-frame[data-sujeto="centro"]::before {
+  background:linear-gradient(180deg,#e4e0db8c,transparent 42%);
+}
+.pz-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; width:100%; padding:1.1rem var(--gutter); background:var(--stone); border-bottom:1px solid #201e1a26; }
+.pz-marca { font:600 clamp(1.3rem,2.4vw,1.8rem)/1 var(--display); letter-spacing:-.04em; color:var(--ink); text-decoration:none; }
+.pz-header nav, .pz-footer nav { display:flex; flex-wrap:wrap; gap:clamp(.8rem,2.5vw,2rem); }
+.pz-header nav a, .pz-footer nav a { font:400 italic clamp(1.05rem,1.6vw,1.3rem)/1 var(--serif); color:var(--ink); text-decoration:none; }
+.pz-header nav a:hover, .pz-footer nav a:hover { text-decoration:underline; text-underline-offset:.25em; }
+.pz-footer { width:100%; padding:clamp(3rem,8vw,7rem) var(--gutter) 2rem; background:var(--ink); color:var(--stone); }
+.pz-footer-frase { margin:0 0 clamp(2rem,5vw,4rem); max-width:16ch; font:400 italic clamp(2.6rem,7vw,6.5rem)/.95 var(--serif); }
+.pz-footer > div { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid #e4e0db40; }
+.pz-footer .pz-marca, .pz-footer nav a { color:var(--stone); }
+.pz-cabecera { padding:clamp(3rem,8vw,7rem) var(--gutter) clamp(2rem,5vw,4rem); }
+.pz-cabecera h1 { margin:0; font:600 clamp(3rem,10vw,9rem)/.9 var(--display); letter-spacing:-.07em; }
+.pz-cabecera p { margin:1rem 0 0; max-width:36ch; font:400 italic clamp(1.3rem,2.4vw,2rem)/1.2 var(--serif); }
+.pz-blog { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr)); gap:0; border-top:1px solid #201e1a26; }
+.pz-entrada { display:grid; gap:.8rem; align-content:start; padding:var(--gutter); color:var(--ink); text-decoration:none; border-right:1px solid #201e1a26; border-bottom:1px solid #201e1a26; }
+.pz-entrada img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+.pz-entrada h2 { margin:.4rem 0 0; font:600 clamp(1.6rem,3vw,2.4rem)/1 var(--display); letter-spacing:-.05em; }
+.pz-entrada p { margin:0; font:400 italic 1.2rem/1.35 var(--serif); }
+.pz-entrada:hover h2 { text-decoration:underline; text-underline-offset:.15em; }
+.pz-prosa { width:min(calc(100% - 2rem),44rem); margin:clamp(3rem,7vw,6rem) auto; font-size:clamp(1.1rem,1.6vw,1.25rem); line-height:1.7; }
+.pz-prosa h2 { margin:2.4rem 0 .6rem; font:400 italic clamp(2rem,4vw,3rem)/1 var(--serif); }
+.pz-prosa blockquote { margin:2rem 0; font:400 italic clamp(1.6rem,3vw,2.4rem)/1.2 var(--serif); }
+.pz-prosa a { color:var(--ink); }
+.pz-blank { min-height:40vh; }
+@media(max-width:43rem) {
+  .ponder-frame {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    padding:0;
+    aspect-ratio:auto;
+  }
+  .ponder-frame[data-sujeto="centro"] {
+    padding-top:0;
+    align-items:stretch;
+  }
+  .ponder-frame img {
+    position:static;
+    order:1;
+    aspect-ratio:16/9;
+    height:auto;
+  }
+  .ponder-frame h1,.ponder-frame h2,.ponder-frame[data-sujeto="centro"] h2 {
+    max-width:none;
+    margin:0;
+    padding:clamp(1.65rem,5vw,3rem) var(--gutter);
+    font-size:clamp(2.4rem,10vw,4.8rem);
+  }
+  .ponder-frame::before { display:none; }
+}
+</style><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"></head>
+<body class="pensativo">
+  <header class="pz-header">
+  <a class="pz-marca" href="./">Pensativo</a>
+  <nav aria-label="Navegación principal">
+    
+    <a href="./">Inicio</a>
+    
+    <a href="./blog">Blog</a>
+    
+    <a href="./acerca-de">Acerca de</a>
+    
+    <a href="./contacto">Contacto</a>
+    
+  </nav>
+</header>
+
+<main class="pz-pagina">
+  <header class="pz-cabecera"><h1>Blog</h1><p>Textos cortos para pensar despacio.</p></header>
+  <div class="pz-blog">
+    
+    <a class="pz-entrada" href="./que-es-pensar">
+      <img src="https://media.stronglify.com/385/pensativo-orangutan-1795207337.webp" alt="Primate pensativo" loading="lazy" decoding="async">
+      <h2>¿Qué es pensar?</h2>
+      <p>Una pregunta vieja, contada desde la mirada de un orangután.</p>
+    </a>
+    
+    <a class="pz-entrada" href="./el-silencio-de-un-gorila">
+      <img src="https://media.stronglify.com/385/pensativo-gorila-1795207349.webp" alt="Primate pensativo" loading="lazy" decoding="async">
+      <h2>El silencio de un gorila</h2>
+      <p>Lo que cabe en un rato sin palabras.</p>
+    </a>
+    
+    <a class="pz-entrada" href="./de-donde-vienen-las-ideas">
+      <img src="https://media.stronglify.com/385/pensativo-bonobo-1795207417.webp" alt="Primate pensativo" loading="lazy" decoding="async">
+      <h2>¿De dónde vienen las ideas?</h2>
+      <p>Apuntes sobre la curiosidad, con un bonobo como guía.</p>
+    </a>
+    
+  </div>
+</main>
+<footer class="pz-footer">
+  <p class="pz-footer-frase">Pensar también es quedarse quieto.</p>
+  <div>
+    <a class="pz-marca" href="./">Pensativo</a>
+    <nav aria-label="Navegación del pie">
+      
+      <a href="./">Inicio</a>
+      
+      <a href="./blog">Blog</a>
+      
+      <a href="./acerca-de">Acerca de</a>
+      
+      <a href="./contacto">Contacto</a>
+      
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
